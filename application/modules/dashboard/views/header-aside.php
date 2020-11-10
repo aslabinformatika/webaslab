@@ -149,6 +149,8 @@
                         </li>
                         <?php endif; ?>
 
+            
+
                         <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="<?php echo base_url('praktikum'); ?>" aria-expanded="false"><i class="mdi mdi-chart-bar"></i><span class="hide-menu">Praktikum</span></a></li>
 
                         <li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-file-document"></i><span class="hide-menu">Rekap Arsip</span></a>
@@ -160,15 +162,18 @@
                                 <li class="sidebar-item"><a href="#" class="sidebar-link"><i class="mdi mdi-note"></i><span class="hide-menu"> Peminjaman Buku </span></a></li>
                             </ul>
                         </li>
+
+                        
                         <li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-account-multiple"></i><span class="hide-menu">Divisi</span></a>
                             <ul aria-expanded="false" class="collapse  first-level">
-                                <li class="sidebar-item"><a href="#" class="sidebar-link"><i class="mdi mdi-account-multiple-outline"></i><span class="hide-menu"> IT Support </span></a></li>
+                                <li class="sidebar-item"><a href="<?php echo base_url('divisi/it_support');?>" class="sidebar-link"><i class="mdi mdi-account-multiple-outline"></i><span class="hide-menu"> IT Support </span></a></li>
                                 <li class="sidebar-item"><a href="#" class="sidebar-link"><i class="mdi mdi-account-multiple-outline"></i><span class="hide-menu"> Jaringan </span></a></li>
                                 <li class="sidebar-item"><a href="#" class="sidebar-link"><i class="mdi mdi-account-multiple-outline"></i><span class="hide-menu"> Pemrograman </span></a></li>
                                 <li class="sidebar-item"><a href="#" class="sidebar-link"><i class="mdi mdi-account-multiple-outline"></i><span class="hide-menu"> Humas </span></a></li>
                                 <li class="sidebar-item"><a href="#" class="sidebar-link"><i class="mdi mdi-account-multiple-outline"></i><span class="hide-menu"> Usaha </span></a></li>
                             </ul>
                         </li>
+          
 
                         <?php if($this->session->userdata('akses')=='1'): ?>
                         <li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-hospital-building"></i><span class="hide-menu">Status Laboratorium</span></a>

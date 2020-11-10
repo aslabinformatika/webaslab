@@ -1,11 +1,25 @@
 <?php
-defined('BASEPATH') OR exit('No direct script access allowed');
+// if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
 class Dashboard extends CI_Controller {
 
 	public function __construct(){
     parent::__construct();
-  }
+    //load our helper
+    $this->load->helper('url');
+	//load our model
+    //$this->load->model('Dashboard');
+//   }
+//   public function index(){
+//     if($this->session->userdata('akses')=='1' || $this->session->userdata('akses')=='2'){
+//     //load session library to use flashdata
+//     $this->load->library('session');
+//     //fetch all files i the database
+//     $data['bugreport'] = $this->BugreportModel->getAllFiles();
+//     $this->load->view('index', $data);
+//     }else{
+//       echo "Anda tidak berhak mengakses halaman ini";
+}
 
 	/**
 	 * Index Page for this controller.
