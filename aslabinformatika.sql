@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 12, 2020 at 12:43 PM
+-- Generation Time: Dec 04, 2020 at 11:21 AM
 -- Server version: 10.1.26-MariaDB
 -- PHP Version: 7.1.8
 
@@ -184,6 +184,135 @@ INSERT INTO `files` (`id_sop`, `filename`, `description`) VALUES
 (8, '03_revisi_nilai.pdf', 'Revisi Nilai Praktikum'),
 (9, '04_pindah_kelompok.pdf', 'Pindah Kelompok Praktikum'),
 (10, '04_penerimaan_aslab_baru.pdf', 'Penerimaan Aslab Baru');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `lab_algoprog`
+--
+
+CREATE TABLE `lab_algoprog` (
+  `id_algoprog` int(11) NOT NULL,
+  `namabarang_algoprog` varchar(225) NOT NULL,
+  `jumlahbarang_algoprog` varchar(4) NOT NULL,
+  `satuanbarang_algoprog` varchar(10) NOT NULL,
+  `tanggalupdate_algoprog` date NOT NULL,
+  `kondisi_algoprog` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `lab_algoprog`
+--
+
+INSERT INTO `lab_algoprog` (`id_algoprog`, `namabarang_algoprog`, `jumlahbarang_algoprog`, `satuanbarang_algoprog`, `tanggalupdate_algoprog`, `kondisi_algoprog`) VALUES
+(1, '                                                                                                     sa                                                                                           test', '    ', '          ', '2020-12-17', 'fs'),
+(2, 'sdw', '2', 'kg', '2020-12-16', 'baik'),
+(3, '                                                                                                efwef', '    ', '          ', '2020-12-02', 'fwfw');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `lab_jarkom`
+--
+
+CREATE TABLE `lab_jarkom` (
+  `id_jarkom` int(11) NOT NULL,
+  `namabarang_jarkom` varchar(225) NOT NULL,
+  `jumlahbarang_jarkom` varchar(4) NOT NULL,
+  `satuanbarang_jarkom` varchar(10) NOT NULL,
+  `tanggalupdate_jarkom` date NOT NULL,
+  `kondisi_jarkom` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `lab_jarkom`
+--
+
+INSERT INTO `lab_jarkom` (`id_jarkom`, `namabarang_jarkom`, `jumlahbarang_jarkom`, `satuanbarang_jarkom`, `tanggalupdate_jarkom`, `kondisi_jarkom`) VALUES
+(3, 'PC', '20', 'Unit', '2020-12-02', ' Rusak 2');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `lab_rpl`
+--
+
+CREATE TABLE `lab_rpl` (
+  `id_rpl` int(11) NOT NULL,
+  `namabarang_rpl` varchar(225) NOT NULL,
+  `jumlahbarang_rpl` varchar(4) NOT NULL,
+  `satuanbarang_rpl` varchar(10) NOT NULL,
+  `tanggalupdate_rpl` date NOT NULL,
+  `kondisi_rpl` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `lab_server`
+--
+
+CREATE TABLE `lab_server` (
+  `id_server` int(11) NOT NULL,
+  `namabarang_server` varchar(225) NOT NULL,
+  `jumlahbarang_server` varchar(4) NOT NULL,
+  `satuanbarang_server` varchar(10) NOT NULL,
+  `tanggalupdate_server` date NOT NULL,
+  `kondisi_server` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `lab_sistemoperasi`
+--
+
+CREATE TABLE `lab_sistemoperasi` (
+  `id_sistemoperasi` int(11) NOT NULL,
+  `namabarang_sistemoperasi` varchar(225) NOT NULL,
+  `jumlahbarang_sistemoperasi` varchar(4) NOT NULL,
+  `satuanbarang_sistemoperasi` varchar(10) NOT NULL,
+  `tanggalupdate_sistemoperasi` date NOT NULL,
+  `kondisi_sistemoperasi` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `lab_sistemoperasi`
+--
+
+INSERT INTO `lab_sistemoperasi` (`id_sistemoperasi`, `namabarang_sistemoperasi`, `jumlahbarang_sistemoperasi`, `satuanbarang_sistemoperasi`, `tanggalupdate_sistemoperasi`, `kondisi_sistemoperasi`) VALUES
+(1, 'PC', '20', 'Unit', '2020-12-02', 'Rusak 1'),
+(2, 'Monitor', '20', 'Unit', '2020-12-02', 'Rusak 3'),
+(3, 'Keyboard', '20', 'Unit', '2020-12-02', 'Normal'),
+(4, 'Mouse', '20', 'Unit', '2020-12-02', 'Normal'),
+(5, 'AC', '1', 'Unit', '2020-12-02', 'Normal'),
+(7, 'Proyektor', '1', 'Unit', '2020-12-02', 'Normal');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `lab_softcomputing`
+--
+
+CREATE TABLE `lab_softcomputing` (
+  `id_softcomputing` int(11) NOT NULL,
+  `namabarang_softcomputing` varchar(225) NOT NULL,
+  `jumlahbarang_softcomputing` varchar(4) NOT NULL,
+  `satuanbarang_softcomputing` varchar(10) NOT NULL,
+  `tanggalupdate_softcomputing` date NOT NULL,
+  `kondisi_softcomputing` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `lab_softcomputing`
+--
+
+INSERT INTO `lab_softcomputing` (`id_softcomputing`, `namabarang_softcomputing`, `jumlahbarang_softcomputing`, `satuanbarang_softcomputing`, `tanggalupdate_softcomputing`, `kondisi_softcomputing`) VALUES
+(1, 'PC', '32', 'Unit', '2020-11-19', 'Normal'),
+(2, 'Monitor', '32', 'Unit', '2020-11-30', 'Normal'),
+(3, 'Keyboard', '32', 'Unit', '2020-11-30', 'Normal'),
+(4, 'Mouse', '32', 'Unit', '2020-11-30', 'Normal'),
+(5, 'AC', '3', 'Unit', '2020-11-30', 'Normal');
 
 -- --------------------------------------------------------
 
@@ -3048,6 +3177,42 @@ ALTER TABLE `files`
   ADD PRIMARY KEY (`id_sop`);
 
 --
+-- Indexes for table `lab_algoprog`
+--
+ALTER TABLE `lab_algoprog`
+  ADD PRIMARY KEY (`id_algoprog`);
+
+--
+-- Indexes for table `lab_jarkom`
+--
+ALTER TABLE `lab_jarkom`
+  ADD PRIMARY KEY (`id_jarkom`);
+
+--
+-- Indexes for table `lab_rpl`
+--
+ALTER TABLE `lab_rpl`
+  ADD PRIMARY KEY (`id_rpl`);
+
+--
+-- Indexes for table `lab_server`
+--
+ALTER TABLE `lab_server`
+  ADD PRIMARY KEY (`id_server`);
+
+--
+-- Indexes for table `lab_sistemoperasi`
+--
+ALTER TABLE `lab_sistemoperasi`
+  ADD PRIMARY KEY (`id_sistemoperasi`);
+
+--
+-- Indexes for table `lab_softcomputing`
+--
+ALTER TABLE `lab_softcomputing`
+  ADD PRIMARY KEY (`id_softcomputing`);
+
+--
 -- Indexes for table `lpj_kegiatan`
 --
 ALTER TABLE `lpj_kegiatan`
@@ -3143,6 +3308,36 @@ ALTER TABLE `div_itsupport_agenda`
 --
 ALTER TABLE `files`
   MODIFY `id_sop` int(2) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+--
+-- AUTO_INCREMENT for table `lab_algoprog`
+--
+ALTER TABLE `lab_algoprog`
+  MODIFY `id_algoprog` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+--
+-- AUTO_INCREMENT for table `lab_jarkom`
+--
+ALTER TABLE `lab_jarkom`
+  MODIFY `id_jarkom` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+--
+-- AUTO_INCREMENT for table `lab_rpl`
+--
+ALTER TABLE `lab_rpl`
+  MODIFY `id_rpl` int(11) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT for table `lab_server`
+--
+ALTER TABLE `lab_server`
+  MODIFY `id_server` int(11) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT for table `lab_sistemoperasi`
+--
+ALTER TABLE `lab_sistemoperasi`
+  MODIFY `id_sistemoperasi` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+--
+-- AUTO_INCREMENT for table `lab_softcomputing`
+--
+ALTER TABLE `lab_softcomputing`
+  MODIFY `id_softcomputing` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 --
 -- AUTO_INCREMENT for table `lpj_kegiatan`
 --

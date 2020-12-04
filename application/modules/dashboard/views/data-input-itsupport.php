@@ -1,15 +1,4 @@
-                                    <!-- FORM ID MULAI -->
-                                    <div class="form-group">
-                                            <label for="id_itsupport">
-                                            ID Barang
-                                                <span class="text-danger">*</span>
-                                            </label>
-                                            <input class="form-control" name="id_itsupport" type="text" min="4">
-                                                <?php echo $this->input->post('id_itsupport'); ?>
-                                            </input>
-                                            <span class="text-danger"><?php echo form_error('id_itsupport');?></span>
-                                        </div>
-                                    <!-- FORM ID BUYAR -->
+
                                     <!-- FORM NAMA MULAI -->
                                         <div class="form-group">
                                             <label for="namabarang_itsupport">

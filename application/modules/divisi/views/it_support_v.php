@@ -1,10 +1,12 @@
 <?php
-defined('BASEPATH') OR exit('No direct script access allowed');
-?><!DOCTYPE html>
+defined('BASEPATH') or exit('No direct script access allowed');
+?>
+<!DOCTYPE html>
 <html dir="ltr" lang="en">
-    <?php  
-         $this->load->helper('url');
-    ?>
+<?php
+$this->load->helper('url');
+?>
+
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -45,7 +47,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <div id="main-wrapper">
         <!-- ============================================================== -->
         <?php
-            $this->load->view('dashboard/header-aside');
+        $this->load->view('dashboard/header-aside');
         ?>
         <!-- ============================================================== -->
         <!-- Page wrapper  -->
@@ -54,7 +56,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             <!-- ============================================================== -->
             <!-- Bread crumb and right sidebar toggle -->
             <!-- ============================================================== -->
-             <div class="page-breadcrumb">
+            <div class="page-breadcrumb">
                 <div class="row">
                     <div class="col-12 d-flex no-block align-items-center">
                         <h4 class="page-title">IT-SUPPORT</h4>
@@ -83,56 +85,97 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                     <div class="col-12">
                         <div class="card">
                             <div class="card-body">
-                                <center><h3 class="card-title">UPDATE DATA BARANG <strong>IT-SUPPORT</strong></h3></center>
+                                <center>
+                                    <h3 class="card-title">UPDATE DATA BARANG <strong>IT-SUPPORT</strong></h3>
+                                </center>
                                 <a href="<?php echo base_url('divisi/tambah'); ?>"><button type="button" class="btn btn-info btn-sm">Tambah Data Barang</button></a>
                                 <div class="table-responsive">
                                     <table id="zero_config" class="table table-striped table-bordered">
                                         <thead>
                                             <tr>
-                                                <th><center>ID</center></th>
-                                                <th><center>Nama Barang</center></th>
-                                                <th><center>Jumlah Barang</center></th>
-                                                <th><center>Satuan Barang</center></th>
+                                                <th>
+                                                    <center>No</center>
+                                                </th>
+                                                <th>
+                                                    <center>Nama Barang</center>
+                                                </th>
+                                                <th>
+                                                    <center>Jumlah Barang</center>
+                                                </th>
+                                                <th>
+                                                    <center>Satuan Barang</center>
+                                                </th>
                                                 <!-- <th><center>Tanggal Update </center></th> -->
-                                                <th><center>Status Barang</center></th>
-                                                
-                                            <?php if($this->session->userdata('akses')=='1'): ?>
-                                                <th><center>Aksi</center></th>
-                                            <?php endif; ?>
+                                                <th>
+                                                    <center>Status Barang</center>
+                                                </th>
+
+                                                <?php if ($this->session->userdata('akses') == '1') : ?>
+                                                    <th>
+                                                        <center>Aksi</center>
+                                                    </th>
+                                                <?php endif; ?>
                                             </tr>
                                         </thead>
                                         <tbody>
-                                        <?php
-                                            foreach($div_itsupport as $data){
-                                        ?>
-                                            <tr>
-                                                <td><center><?php echo $data->id_itsupport; ?></center></td>
-                                                <td><center><?php echo $data->namabarang_itsupport; ?></center></td>
-                                                <td><center><?php echo $data->jumlahbarang_itsupport; ?></center></td> 
-                                                <td><center><?php echo $data->satuanbarang_itsupport; ?></center></td> 
-                                                <!-- <td><center><?php echo $data->tanggalupdate_itsupport; ?></center></td> -->
-                                                <td><center><?php echo $data->statusbarang_itsupport; ?></center></td>
-                                               
-                                            <?php if($this->session->userdata('akses')=='1'): ?>
-                                                <td><center><a href="<?php echo base_url().'divisi/ubah/'.$data->id_itsupport; ?>">Ubah</a></center></td>
-                                                <td><center><a href="<?php echo base_url().'divisi/hapus/'.$data->id_itsupport; ?>">Hapus</a></center></td>
-                                            <?php endif; ?>
-                                            </tr>
-                                        <?php
-                                        }
-                                        ?>
+                                            <?php
+                                            $id = 1;
+                                            foreach ($div_itsupport as $data) {
+                                            ?>
+                                                <tr>
+                                                    <td>
+                                                    <center><?php echo $id++; ?></center>
+                                                    </td>
+                                                    <td>
+                                                        <center><?php echo $data->namabarang_itsupport; ?></center>
+                                                    </td>
+                                                    <td>
+                                                        <center><?php echo $data->jumlahbarang_itsupport; ?></center>
+                                                    </td>
+                                                    <td>
+                                                        <center><?php echo $data->satuanbarang_itsupport; ?></center>
+                                                    </td>
+                                                    <!-- <td><center><?php echo $data->tanggalupdate_itsupport; ?></center></td> -->
+                                                    <td>
+                                                        <center><?php echo $data->statusbarang_itsupport; ?></center>
+                                                    </td>
+
+                                                    <?php if ($this->session->userdata('akses') == '1') : ?>
+                                                        <td>
+                                                            <center><a href="<?php echo base_url() . 'divisi/ubah/' . $data->id_itsupport; ?>">Ubah</a></center>
+                                                        </td>
+                                                        <td>
+                                                            <center><a href="<?php echo base_url() . 'divisi/hapus/' . $data->id_itsupport; ?>">Hapus</a></center>
+                                                        </td>
+                                                    <?php endif; ?>
+                                                </tr>
+                                            <?php
+                                            }
+                                            ?>
                                         </tbody>
                                         <tfoot>
                                             <tr>
-                                            <th><center>ID</center></th>
-                                                <th><center>Nama Barang</center></th>
-                                                <th><center>Jumlah Barang</center></th>
-                                                <th><center>Satuan Barang</center></th>
+                                                <th>
+                                                    <center>No</center>
+                                                </th>
+                                                <th>
+                                                    <center>Nama Barang</center>
+                                                </th>
+                                                <th>
+                                                    <center>Jumlah Barang</center>
+                                                </th>
+                                                <th>
+                                                    <center>Satuan Barang</center>
+                                                </th>
                                                 <!-- <th><center>Tanggal Update </center></th> -->
-                                                <th><center>Status Barang</center></th>
-                                            <?php if($this->session->userdata('akses')=='1'): ?>
-                                                <th><center>Aksi</center></th>
-                                            <?php endif; ?>
+                                                <th>
+                                                    <center>Status Barang</center>
+                                                </th>
+                                                <?php if ($this->session->userdata('akses') == '1') : ?>
+                                                    <th>
+                                                        <center>Aksi</center>
+                                                    </th>
+                                                <?php endif; ?>
                                             </tr>
                                         </tfoot>
                                     </table>

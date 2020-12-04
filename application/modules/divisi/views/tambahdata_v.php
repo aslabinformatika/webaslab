@@ -1,10 +1,12 @@
 <?php
-defined('BASEPATH') OR exit('No direct script access allowed');
-?><!DOCTYPE html>
+defined('BASEPATH') or exit('No direct script access allowed');
+?>
+<!DOCTYPE html>
 <html dir="ltr" lang="en">
-    <?php  
-         $this->load->helper('url');
-    ?>
+<?php
+$this->load->helper('url');
+?>
+
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -47,7 +49,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         <!-- Topbar header - style you can find in pages.scss -->
         <!-- ============================================================== -->
         <?php
-            $this->load->view('dashboard/header-aside');
+        $this->load->view('dashboard/header-aside');
         ?>
         <!-- ============================================================== -->
         <!-- Page wrapper  -->
@@ -56,7 +58,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             <!-- ============================================================== -->
             <!-- Bread crumb and right sidebar toggle -->
             <!-- ============================================================== -->
-             <div class="page-breadcrumb">
+            <div class="page-breadcrumb">
                 <div class="row">
                     <div class="col-12 d-flex no-block align-items-center">
                         <h4 class="page-title">IT-SUPPORT</h4>
@@ -84,26 +86,28 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 <!-- ============================================================== -->
                 <div class="row">
 
-                        <div class="col-12">
-                            <div class="card">
-                                <div class="card-body">
-                                    <center><h3 class="card-title">TAMBAH DATA BARANG <strong>IT-SUPPORT</strong></h3></center>
-                                    <div style="color: red;"><?php echo validation_errors(); ?></div>
-                                    <?php echo form_open("divisi/tambah_data", array('enctype'=>'multipart/form-data')); ?>
-                                    <?php
-                                        $this->load->view('dashboard/data-input-itsupport');
-                                    ?>
+                    <div class="col-12">
+                        <div class="card">
+                            <div class="card-body">
+                                <center>
+                                    <h3 class="card-title">TAMBAH DATA BARANG <strong>IT-SUPPORT</strong></h3>
+                                </center>
+                                <div style="color: red;"><?php echo validation_errors(); ?></div>
+                                <?php echo form_open("divisi/tambah_data", array('enctype' => 'multipart/form-data')); ?>
+                                <?php
+                                $this->load->view('dashboard/data-input-itsupport');
+                                ?>
 
-                                    <?php echo form_close(); ?>
-                                    </form>
-                                </div>
+                                <?php echo form_close(); ?>
+                                </form>
                             </div>
                         </div>
+                    </div>
                 </div>
                 <!-- ============================================================== -->
                 <!-- Recent comment and chats -->
                 <!-- ============================================================== -->
-            </div> 
+            </div>
             <!-- ============================================================== -->
             <!-- End Container fluid  -->
             <!-- ============================================================== -->
