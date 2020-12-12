@@ -23,15 +23,6 @@ $this->load->helper('url');
     <link rel="stylesheet" type="text/css" href="<?php echo base_url('public/matrix/assets/extra-libs/multicheck/multicheck.css') ?>">
     <link href="<?php echo base_url('public/matrix/assets/libs/datatables.net-bs4/css/dataTables.bootstrap4.css') ?>" rel="stylesheet">
     <link href="<?php echo base_url('public/matrix/dist/css/style.min.css') ?>" rel="stylesheet">
-    <style type="text/css">
-        input {
-            text-align: left;
-        }
-
-        .value {
-            text-align: left;
-        }
-    </style>
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -76,7 +67,7 @@ $this->load->helper('url');
                                 <ol class="breadcrumb">
                                     <li class="breadcrumb-item">IT-Support</li>
                                     <li class="breadcrumb-item">Data IT-Support</li>
-                                    <li class="breadcrumb-item active">Update Data</a></li>
+                                    <li class="breadcrumb-item active">Tambah Data</a></li>
                                     <!-- <li class="breadcrumb-item active" aria-current="page">Praktikum</li> -->
                                 </ol>
                             </nav>
@@ -95,89 +86,20 @@ $this->load->helper('url');
                 <!-- ============================================================== -->
                 <div class="row">
 
-                    <div class="col-6">
+                    <div class="col-12">
                         <div class="card">
                             <div class="card-body">
                                 <center>
-                                    <h3 class="card-title">UPDATE DATA BARANG <strong>IT-SUPPORT</strong></h3>
+                                    <h3 class="card-title">TAMBAH DATA BARANG <strong>IT-SUPPORT</strong></h3>
                                 </center>
                                 <div style="color: red;"><?php echo validation_errors(); ?></div>
-                                <?php echo form_open("divisi/ubah/" . $div_itsupport->id_itsupport); ?>
-                                <!-- FORM NAMA BARANG MULAI -->
-                                <div class="form-group">
-                                    <label for="namabarang_itsupport">
-                                        Nama Barang
-                                        <span class="text-danger">*</span>
-                                    </label>
-                                    <input class="form-control" name="namabarang_itsupport" type="text" value="
-                                                <?php echo set_value('namabarang_itsupport', $div_itsupport->namabarang_itsupport); ?>">
-                                    <?php echo $this->input->post('namabarang_itsupport'); ?>
-                                    </input>
-                                    <span class="text-danger"><?php echo form_error('namabarang_itsupport'); ?></span>
-                                </div>
-                                <!-- FORM NAMA BARANG BUYAR -->
-                                <!-- FORM jumlah barang MULAI -->
-                                <div class="form-group">
-                                    <label for="jumlahbarang_itsupport">
-                                        Jumlah Barang
-                                        <span class="text-danger">*</span>
-                                    </label>
-                                    <input class="form-control" name="jumlahbarang_itsupport" type="text" value="<?= $div_itsupport->jumlahbarang_itsupport?>">
-                                    <?php echo $this->input->post('jumlahbarang_itsupport'); ?>
-                                    </input>
-                                    <span class="text-danger"><?php echo form_error('jumlahbarang_itsupport'); ?></span>
-                                </div>
-                                <!-- FORM jumlah barang BUYAR -->
-
-                                <!-- FORM satuan barang MULAI -->
-                                <div class="form-group">
-                                    <label for="satuanbarang_itsupport">
-                                        Satuan Barang
-                                        <span class="text-danger">*</span>
-                                    </label>
-                                    <input class="form-control" name="satuanbarang_itsupport" type="text" value="
-                                                <?php echo set_value($div_itsupport->satuanbarang_itsupport); ?>">
-                                    <?php echo $this->input->post('satuanbarang_itsupport'); ?>
-                                    </input>
-                                    <span class="text-danger"><?php echo form_error('satuanbarang_itsupport'); ?></span>
-                                </div>
-                                <!-- FORM satuan barang BUYAR -->
-
-                                <!-- FORM TANGGAL update-->
-                                <div class="form-group">
-                                    <label for="tanggalupdate_itsupport">
-                                        Tanggal Update
-                                        <span class="text-danger">*</span>
-                                    </label>
-                                    <input class="form-control" name="tanggalupdate_itsupport" type="date" value="
-                                                    <?php echo set_value('tanggalupdate_itsupport', $div_itsupport->tanggalupdate_itsupport); ?>">
-                                    <?php echo $this->input->post('tanggalupdate_itsupport'); ?>
-                                    </input>
-                                    <span class="text-danger"><?php echo form_error('tanggalupdate_itsupport'); ?></span>
-                                </div>
-                                <!-- FORM TANGGAL update BUYAR -->
-
-                                <!-- FORM status barang MULAI -->
-                                <div class="form-group">
-                                    <label for="statusbarang_itsupport">
-                                        Status Barang
-                                        <span class="text-danger">*</span>
-                                    </label>
-                                    <input class="form-control" name="statusbarang_itsupport" type="text">
-                                    <?php echo $this->input->post('statusbarang_itsupport'); ?>
-                                    </input>
-                                    <span class="text-danger"><?php echo form_error('statusbarang_itsupport'); ?></span>
-                                </div>
-                                <!-- FORM status barang BUYAR -->
-
-                                <div class="border-top">
-                                    <div class="card-body">
-                                        <input type="submit" name="submit" value="Ubah" class="btn btn-primary"></input>
-                                        <a href="<?php echo base_url(); ?>"><input type="reset" name="submit" value="Batal" class="btn btn-danger"></input></a>
-                                    </div>
-                                </div>
+                                <?php echo form_open("divitsupport/tambah_data", array('enctype' => 'multipart/form-data')); ?>
+                                <?php
+                                $this->load->view('dashboard/data-input-itsupport');
+                                ?>
 
                                 <?php echo form_close(); ?>
+                                </form>
                             </div>
                         </div>
                     </div>

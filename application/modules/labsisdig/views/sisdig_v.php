@@ -46,8 +46,6 @@ $this->load->helper('url');
     <!-- ============================================================== -->
     <div id="main-wrapper">
         <!-- ============================================================== -->
-        <!-- Topbar header - style you can find in pages.scss -->
-        <!-- ============================================================== -->
         <?php
         $this->load->view('dashboard/header-aside');
         ?>
@@ -61,13 +59,12 @@ $this->load->helper('url');
             <div class="page-breadcrumb">
                 <div class="row">
                     <div class="col-12 d-flex no-block align-items-center">
-                        <h4 class="page-title">IT-SUPPORT</h4>
+                        <h4 class="page-title">sisdig</h4>
                         <div class="ml-auto text-right">
                             <nav aria-label="breadcrumb">
                                 <ol class="breadcrumb">
-                                    <li class="breadcrumb-item">IT-Support</li>
-                                    <li class="breadcrumb-item">Data IT-Support</li>
-                                    <li class="breadcrumb-item active">Tambah Data</a></li>
+                                    <li class="breadcrumb-item">sisdig </li>
+                                    <li class="breadcrumb-item active">Data Lab sisdig </a></li>
                                     <!-- <li class="breadcrumb-item active" aria-current="page">Praktikum</li> -->
                                 </ol>
                             </nav>
@@ -85,21 +82,88 @@ $this->load->helper('url');
                 <!-- ============================================================== -->
                 <!-- ============================================================== -->
                 <div class="row">
-
                     <div class="col-12">
                         <div class="card">
                             <div class="card-body">
                                 <center>
-                                    <h3 class="card-title">TAMBAH DATA BARANG <strong>IT-SUPPORT</strong></h3>
+                                    <h3 class="card-title">DATA BARANG <strong>SISTEM DIGITAL</strong></h3>
                                 </center>
-                                <div style="color: red;"><?php echo validation_errors(); ?></div>
-                                <?php echo form_open("divisi/tambah_data", array('enctype' => 'multipart/form-data')); ?>
-                                <?php
-                                $this->load->view('dashboard/data-input-itsupport');
-                                ?>
+                                <a href="<?php echo base_url('labsisdig/tambah'); ?>"><button type="button" class="btn btn-info btn-sm">Tambah Data Barang</button></a>
+                                <div class="table-responsive">
+                                    <table id="zero_config" class="table table-striped table-bordered">
+                                        <thead>
+                                            <tr>
+                                                <th>
+                                                    <center>No</center>
+                                                </th>
+                                                <th>
+                                                    <center>Nama Barang</center>
+                                                </th>
+                                                <th>
+                                                    <center>Jumlah Barang</center>
+                                                </th>
+                                                <th>
+                                                    <center>Satuan Barang</center>
+                                                </th>
+                                                <th>
+                                                    <center>Tanggal  </center>
+                                                </th>
+                                                <th>
+                                                    <center>Kondisi Barang</center>
+                                                </th>
 
-                                <?php echo form_close(); ?>
-                                </form>
+                                                <?php if ($this->session->userdata('akses') == '1') : ?>
+                                                    <th colspan="2">
+                                                        <center>Aksi</center>
+                                                    </th>
+                                                <?php endif; ?>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <?php
+                                            $id = 1;
+                                            foreach ($lab_sisdig as $data) {
+                                            ?>
+                                                <tr>
+                                                
+                                                    <td>
+                                                        <center><?php echo $id++; ?></center>
+                                                    </td>
+                                                    
+                                                    <td>
+                                                        <center><?php echo $data->namabarang_sisdig; ?></center>
+                                                    </td>
+                                                    <td>
+                                                        <center><?php echo $data->jumlahbarang_sisdig; ?></center>
+                                                    </td>
+                                                    <td>
+                                                        <center><?php echo $data->satuanbarang_sisdig; ?></center>
+                                                    </td>
+                                                    <td><center><?php echo $data->tanggalupdate_sisdig; ?></center></td>
+                                                    <td>
+                                                        <center><?php echo $data->kondisi_sisdig; ?></center>
+                                                    </td>
+                                                    
+
+                                                    <?php if ($this->session->userdata('akses') == '1') : ?>
+                                                        <td>
+                                                            <center><a href="<?php echo base_url() . 'labsisdig/ubah/' . $data->id_sisdig; ?>">Ubah</a></center>
+                                                        </td>
+                                                        <td>
+                                                            <center><a href="<?php echo base_url() . 'labsisdig/hapus/' . $data->id_sisdig; ?>" onclick="return confirm('Anda yakin mau menghapus item ini ?')" >Hapus</a></center>
+
+                                                        </td>
+                                                    <?php endif; ?>
+                                                </tr>
+                                            <?php
+                                            }
+                                            ?>
+                                        </tbody>
+            
+                                       
+                                    </table>
+                                </div>
+
                             </div>
                         </div>
                     </div>
